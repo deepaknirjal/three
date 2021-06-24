@@ -11,6 +11,7 @@ pipeline {
                 if [! command -v git] && [! -d /var/www/html/three]
                 then 
                     apt install git -y
+		    rm -rf /var/www/html/three
                     git clone -b 2nd_branch https://github.com/deepaknirjal/three.git/
                 fi
                 '''
